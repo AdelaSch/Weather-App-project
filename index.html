@@ -11,11 +11,64 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script
+    src="https://kit.fontawesome.com/a3507c5bc2.js"
+    crossorigin="anonymous"
+  ></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
+      <section class="main-container">
+
+        <form id="search-form">
+          <input
+            class="main-search"
+            id="search-input"
+            type="text"
+            placeholder="Choose location"
+            name="search"
+            autocomplete="off"
+            autofocus="on"
+          />
+          <button class="search-button" id="search-button" type="submit"><i class="fas fa-search"></i></button>
+          <button class="search-button" id="location-button" type="submit"><i class="fas fa-map-marker-alt"></i></button>
+        </form>
+
+        <div class="main-card">
+          <h1 id = "current-city">New York</h1>
+          <div id = "current-date">Friday, 05:00</div>
+          <div class="main-temperature"><i class="fas fa-cloud-sun main-icon"></i>
+          <span id="current-temp">12</span><span><a href=""id="unit-cel">°C</a>/</span><span><a href=""id="unit-fahr">°F</a></span>
+          <p id="desc">Partly Cloudy</p>
+          </div>
+        </div>  
+
+          <div class="container px-5 py-5 weather-tab">
+            <div class="row">
+                <div class="col mx-1 card-blur">Mon
+                  <i class="fas fa-cloud-sun-rain font-icon"></i>
+                  <span>10°C</span>
+                </div>
+                <div class="col mx-1 card-blur">Tue
+                  <i class="fas fa-cloud-sun-rain font-icon"></i>
+                  <span>9°C</span>
+                </div>
+                <div class="col mx-1 card-blur">Wed
+                  <i class="fas fa-sun font-icon"></i>
+                  <span>15°C</span>
+                </div>
+                <div class="col mx-1 card-blur">Thu
+                  <i class="fas fa-cloud-sun font-icon"></i>
+                  <span>13°C</span>
+                </div>
+                <div class="col mx-1 card-blur">Fri
+                  <i class="fas fa-cloud-sun font-icon"></i>
+                  <span>13°C</span>
+                </div>
+
+      </section>
+      <small><a href="https://github.com/AdelaSch/Weather-App-project">Open-source code</a> by Adela Schieblova</small>
     </div>
     <script src="src/app.js"></script>
   </body>
