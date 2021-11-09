@@ -9,21 +9,6 @@ body {
   background-image: url("images/city.png");
   font-family: "Nunito Sans", sans-serif;
 }
-.main-wrapper {
-  background: inherit;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  margin-top: 100px;
-  padding-top: 50px;
-  width: auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-.main-card {
-  margin-top: 50px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  font-size: 1rem;
-}
 
 h1 {
   font-size: 2rem;
@@ -43,6 +28,27 @@ a:hover {
 div .row .col {
   border-radius: 10px;
   padding-top: 10px;
+}
+
+small {
+  margin-top: 5px;
+  font-size: 80%;
+  font-style: italic;
+}
+.main-wrapper {
+  background: inherit;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-top: 100px;
+  padding-top: 50px;
+  width: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.main-card {
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1rem;
 }
 
 .main-search {
@@ -87,15 +93,21 @@ div .row .col {
   transition: all 0.5s ease-out;
   background-color: rgba(255, 255, 255, 0.185);
 }
+.units {
+  top: -13px;
+  position: relative;
+  font-size: 0.8rem;
+}
 
 #current-temp,
 #desc {
+  margin-top: 5px;
   line-height: 20px;
   text-transform: capitalize;
   font-size: 1rem;
 }
-small {
-  margin-top: 5px;
-  font-size: 80%;
-  font-style: italic;
+#current-temp {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
 }
