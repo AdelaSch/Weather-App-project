@@ -11,9 +11,9 @@
       crossorigin="anonymous"
     />
     <script
-    src="https://kit.fontawesome.com/a3507c5bc2.js"
-    crossorigin="anonymous">
-    </script>
+      src="https://kit.fontawesome.com/a3507c5bc2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -30,46 +30,63 @@
             autocomplete="off"
             autofocus="on"
           />
-          <button class="search-button" id="search-button" type="submit"><i class="fas fa-search"></i></button>
-          <button class="search-button" id="location-button" type="submit"><i class="fas fa-map-marker-alt"></i></button>
+          <button class="search-button" id="search-button" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="search-button" id="location-button" type="submit">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
         </form>
 
-        <div class= "main-card">
-          <h1 id = "current-city">New York</h1>
-          <div id = "current-date">Friday, 05:00</div>
-          <div><i class="fas fa-cloud-sun main-icon"></i>
-          <span id="current-temp">12</span>
-          <span class="units"><a href=""id="unit-cel">°C </a>|</span>
-          <span class="units"><a href=""id="unit-fahr"> °F</a></span>
-          <div id="desc">Partly Cloudy</div>
+        <div class="main-card">
+          <h1 id="current-city">New York</h1>
+          <div id="current-date">Friday, 05:00</div>
+          <div>
+            <i class="fas fa-cloud-sun main-icon"></i>
+            <span id="current-temp">12</span>
+            <span class="units"><a href="" id="unit-cel">°C </a>|</span>
+            <span class="units"><a href="" id="unit-fahr"> °F</a></span>
+            <div id="desc">Partly Cloudy</div>
           </div>
-        </div>  
-
-          <div class="container px-5 py-5 weather-tab">
-            <div class="row">
-                <div class="col mx-1 card-blur">Mon
-                  <i class="fas fa-cloud-sun-rain font-icon"></i>
-                  <span>10°C</span>
-                </div>
-                <div class="col mx-1 card-blur">Tue
-                  <i class="fas fa-cloud-sun-rain font-icon"></i>
-                  <span>9°C</span>
-                </div>
-                <div class="col mx-1 card-blur">Wed
-                  <i class="fas fa-sun font-icon"></i>
-                  <span>15°C</span>
-                </div>
-                <div class="col mx-1 card-blur">Thu
-                  <i class="fas fa-cloud-sun font-icon"></i>
-                  <span>13°C</span>
-                </div>
-                <div class="col mx-1 card-blur">Fri
-                  <i class="fas fa-cloud-sun font-icon"></i>
-                  <span>13°C</span>
-                </div>
-
+        </div>
+        <div class="container px-5 py-5 weather-tab">
+          <div class="row">
+            <div class="col mx-1 card-blur">
+              Mon
+              <i class="fas fa-cloud-sun-rain font-icon"></i>
+              <span>10°C</span>
+            </div>
+            <div class="col mx-1 card-blur">
+              Tue
+              <i class="fas fa-cloud-sun-rain font-icon"></i>
+              <span>9°C</span>
+            </div>
+            <div class="col mx-1 card-blur">
+              Wed
+              <i class="fas fa-sun font-icon"></i>
+              <span>15°C</span>
+            </div>
+            <div class="col mx-1 card-blur">
+              Thu
+              <i class="fas fa-cloud-sun font-icon"></i>
+              <span>13°C</span>
+            </div>
+            <div class="col mx-1 card-blur">
+              Fri
+              <i class="fas fa-cloud-sun font-icon"></i>
+              <span>13°C</span>
+            </div>
+          </div>
+        </div>
       </section>
-      <small><a href="https://github.com/AdelaSch/Weather-App-project" target="_blank">Open-source code</a> by Adela Schieblova</small>
+      <small>
+        <a
+          href="https://github.com/AdelaSch/Weather-App-project"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Adela Schieblova</small
+      >
     </div>
     <script src="src/app.js"></script>
   </body>
