@@ -100,7 +100,7 @@ small {
 }
 
 #current-temp,
-#desc {
+#description {
   margin-top: 5px;
   line-height: 20px;
   text-transform: capitalize;
