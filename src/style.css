@@ -4,9 +4,6 @@ body {
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("images/city.png");
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -62,11 +59,9 @@ small {
   background: white;
 }
 
-.main-icon {
-  display: block;
-  margin: 10px;
-  font-size: 2rem;
-  color: rgb(255, 255, 255);
+img.main-icon {
+  width: 80px;
+  margin-top: 10px;
 }
 
 .font-icon {

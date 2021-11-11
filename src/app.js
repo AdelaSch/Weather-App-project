@@ -41,15 +41,19 @@ function displayForecast(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#current-city");
   let descriptionElement = document.querySelector("#description");
-  let dateElement = document.querySelector("#current-date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  dateElement.innerHTML = `${days}, ${months} ${date} </br> ${hours}:${minutes}`;
 }
 
 let apiKey = "82aab33db8911af682203374eb6fbc22";
-let city = "Paris";
+let city = "bangkok";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayForecast);
+
+// Changing today's icon according to the description
+function showIcon(response) {
+  let icon = document.querySelector("#main-icon");
+  icon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
+}
