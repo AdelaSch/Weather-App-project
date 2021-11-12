@@ -5,11 +5,17 @@ body {
   height: 100vh;
   text-align: center;
   font-family: "Nunito Sans", sans-serif;
+  background-color: #7d08dc;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(296.15, 77%, 40%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(261.38, 72%, 51%) 0, transparent 55%);
 }
 
 h1 {
   font-size: 2rem;
-  margin-top: 20px;
   font-weight: 700;
   line-height: 28px;
 }
@@ -23,20 +29,48 @@ small {
   margin-top: 5px;
   font-size: 80%;
   font-style: italic;
+  font-weight: 300;
+  color: whitesmoke;
 }
 .main-wrapper {
-  background: inherit;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
   margin-top: 100px;
+
   padding-top: 50px;
   width: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
+.weather-tab {
+  background-color: rgba(246, 242, 250, 0.904);
+  border-radius: 0 0 30px 30px;
+}
+.main-temp-box {
+  background-color: #7d08dc;
+  color: whitesmoke;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(296.15, 77%, 40%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(261.38, 72%, 51%) 0, transparent 55%);
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  top: 50px;
+  right: -70px;
+  z-index: 9;
+  justify-content: center;
+  border-radius: 30px;
+}
+.remove {
+  padding: 0;
+  position: relative;
+  top: 40px;
+}
 .main-card {
-  margin-top: 50px;
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding: 20px;
   font-size: 1rem;
 }
 
@@ -46,9 +80,12 @@ small {
   width: 50%;
 }
 .search-button {
-  border: none;
+  border: solid 0.5px #6e1edc;
   border-radius: 4px;
   background: white;
+}
+.search-icon {
+  color: #6e1edc;
 }
 
 img.main-icon {
@@ -60,7 +97,7 @@ img.main-icon {
   display: block;
   margin: 8px;
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: #6e1edc;
 }
 
 .container {
@@ -71,15 +108,6 @@ img.main-icon {
   align-items: center;
 }
 
-.card-blur {
-  background: inherit;
-  background: rgba(192, 121, 177, 0.267);
-  backdrop-filter: blur(2px);
-}
-.card-blur:hover {
-  transition: all 0.5s ease-out;
-  background-color: rgba(255, 255, 255, 0.185);
-}
 .units {
   top: -13px;
   position: relative;
@@ -88,8 +116,6 @@ img.main-icon {
 
 #current-temp,
 #description {
-  margin-top: 5px;
-  line-height: 20px;
   text-transform: capitalize;
   font-size: 1rem;
 }
@@ -101,7 +127,7 @@ img.main-icon {
 
 .active {
   cursor: default;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -110,5 +136,9 @@ img.main-icon {
 }
 a {
   text-decoration: none;
-  color: rgb(60, 200, 255);
+  color: white;
+}
+
+#city-input:focus {
+  outline: none;
 }

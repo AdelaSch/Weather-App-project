@@ -23,7 +23,7 @@
       <section class="main-wrapper">
         <form id="search-form">
           <input
-            class="main-search"
+            class="main-search search-button"
             id="city-input"
             type="text"
             placeholder="Choose location"
@@ -32,20 +32,23 @@
             autofocus="on"
           />
           <button class="search-button" id="search-button" type="submit">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search search-icon"></i>
           </button>
           <button class="search-button" id="location-button" type="submit">
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker-alt search-icon"></i>
           </button>
         </form>
 
         <div class="main-card">
-          <h1 id="current-city"></h1>
-          <div id="current-date"></div>
-          <div>
+          <div class="remove">
+            <h1 id="current-city"></h1>
+            <div id="current-date"></div>
+
             <p>
-              <img src="" alt="icon" id="main-icon" class="main-icon" />
+              <img src="" id="main-icon" class="main-icon" />
             </p>
+          </div>
+          <div class="main-temp-box">
             <span id="current-temp"></span>
             <span class="units"
               ><a href="" id="unit-celsius" class="active">°C </a>|</span
