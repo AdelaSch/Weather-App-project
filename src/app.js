@@ -36,14 +36,15 @@ if (minute < 10) {
 let dateTime = document.querySelector("#current-date");
 dateTime.innerHTML = `${day}, ${month} ${date} </br> ${hour}:${minute}`;
 
-function displayForecast(response) {
-  console.log(response.data.main.temp);
+function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#current-city");
   let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#main-icon");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
@@ -52,7 +53,7 @@ function displayForecast(response) {
 function search(city) {
   let apiKey = "82aab33db8911af682203374eb6fbc22";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
@@ -61,7 +62,32 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Tampa");
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#unit-fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#unit-celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Tampa");
