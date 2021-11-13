@@ -41,7 +41,7 @@ small {
   width: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
-.weather-tab {
+.weather-forecast {
   background-color: rgba(246, 242, 250, 0.904);
   border-radius: 0 0 30px 30px;
 }
@@ -141,4 +141,8 @@ a {
 
 #city-input:focus {
   outline: none;
+}
+
+.weather-forecast-day img {
+  display: block;
 }
