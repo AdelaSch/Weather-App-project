@@ -21,6 +21,7 @@
   <body>
     <div class="container">
       <section class="main-wrapper">
+        <!–– search engine ––>
         <form id="search-form">
           <input
             class="main-search search-button"
@@ -39,15 +40,17 @@
           </button>
         </form>
 
+        <!–– main card with city + date/time + main icon ––>
         <div class="main-card">
           <div class="remove">
             <h1 id="current-city"></h1>
             <div id="current-date"></div>
-
             <p>
               <img src="" id="main-icon" class="main-icon" />
             </p>
           </div>
+
+          <!–– div with current temperature + unit conversion + description ––>
           <div class="main-temp-box">
             <span id="current-temp"></span>
             <span class="units"
@@ -57,53 +60,9 @@
             <div id="description"></div>
           </div>
         </div>
-        <div class="container px-5 py-5 weather-forecast">
-          <div class="row">
-            <div class="col mx-1 weather-forecast-day">
-              Mon
-              <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
-                alt=""
-                width="42"
-              />
-              <span>10°C</span>
-            </div>
-            <div class="col mx-1 weather-forecast-day">
-              Tue
-              <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
-                alt=""
-                width="42"
-              />
-              <span>9°C</span>
-            </div>
-            <div class="col mx-1 weather-forecast-day">
-              Wed
-              <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
-                alt=""
-                width="42"
-              />
-              <span>15°C</span>
-            </div>
-            <div class="col mx-1 weather-forecast-day">
-              Thu
-              <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
-                alt=""
-                width="42"
-              />
-              <span>13°C</span>
-            </div>
-            <div class="col mx-1 weather-forecast-day">
-              Fri
-              <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
-                alt=""
-                width="42"
-              />
-              <span>13°C</span>
-            </div>
+
+        <!–– 5day forecast ––>
+        <div class="weather-forecast" id="forecast">
           </div>
         </div>
       </section>

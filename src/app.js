@@ -1,46 +1,61 @@
-let now = new Date();
-let date = now.getDate();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sept",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+function formatDate(timezone) {
+  let date = new Date();
+  let localTime = date.getTime();
+  let localOffset = date.getTimezoneOffset() * 60000;
+  let utc = localTime + localOffset;
+  let nDate = new Date(utc + 1000 * timezone);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[nDate.getDay()];
+  let hours = nDate.getHours();
+  hours = hours > 9 ? hours : "0" + hours;
+  let minutes = nDate.getMinutes();
+  minutes = minutes > 9 ? minutes : "0" + minutes;
+  return `${day}, ${hours}:${minutes}`;
 }
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastDays = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col mx-1 weather-forecast-day">${day}
+      <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="42"
+      />
+    
+      <span class="maximum-temperature">15°</span>
+      <span class="minimum-temperature">10°</span>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-let dateTime = document.querySelector("#current-date");
-dateTime.innerHTML = `${day}, ${month} ${date} </br> ${hour}:${minute}`;
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#current-city");
   let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#main-icon");
+  let dayTime = document.querySelector("#current-date");
+  dayTime.innerHTML = formatDate(response.data.timezone);
 
   celsiusTemperature = response.data.main.temp;
 
@@ -91,3 +106,4 @@ let celsiusLink = document.querySelector("#unit-celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Tampa");
+displayForecast();

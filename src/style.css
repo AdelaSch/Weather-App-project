@@ -44,6 +44,7 @@ small {
 .weather-forecast {
   background-color: rgba(246, 242, 250, 0.904);
   border-radius: 0 0 30px 30px;
+  padding: 40px;
 }
 .main-temp-box {
   background-color: #7d08dc;
@@ -145,4 +146,16 @@ a {
 
 .weather-forecast-day img {
   display: block;
+  justify-content: center;
+}
+
+.minimum-temperature,
+.maximum-temperature {
+  display: inline;
+  font-size: 13px;
+  justify-content: space-between;
+}
+.maximum-temperature {
+  margin-right: 5px;
+  font-weight: 900;
 }
