@@ -45,6 +45,16 @@ small {
   background-color: rgba(246, 242, 250, 0.904);
   border-radius: 0 0 30px 30px;
   padding: 40px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.weather-forecast-day {
+  display: inline;
+}
+.weather-forecast-day img {
+  display: block;
+  justify-content: center;
+  margin: 5px;
 }
 .main-temp-box {
   background-color: #7d08dc;
@@ -142,11 +152,6 @@ a {
 
 #city-input:focus {
   outline: none;
-}
-
-.weather-forecast-day img {
-  display: block;
-  justify-content: center;
 }
 
 .minimum-temperature,
