@@ -47,13 +47,14 @@ function displayForecast(response) {
         alt=""
         width="42"
       />
-    
+    <div class="min-max-temp">
       <span class="maximum-temperature">${Math.round(
         forecastDay.temp.max
       )}°</span>
       <span class="minimum-temperature">${Math.round(
         forecastDay.temp.min
       )}°</span>
+      </div>
   </div>
   `;
     }

@@ -25,6 +25,9 @@ p {
 div .row .col {
   border-radius: 10px;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 small {
@@ -54,7 +57,7 @@ small {
 .weather-forecast-day {
   background-color: white;
   transform-origin: center;
-  transform: perspective(800px) rotateY(25deg);
+  transform: perspective(800px) rotateY(28deg);
   transition: 0.5s;
   padding-bottom: 5px;
 }
@@ -71,10 +74,10 @@ small {
     rgba(255, 255, 255, 0)
   );
 }
+
 .weather-forecast-day img {
-  display: block;
-  justify-content: center;
-  margin: 5px;
+  display: flex;
+  align-self: center;
 }
 div.row {
   margin-top: 20px;
@@ -189,9 +192,7 @@ a {
 
 .minimum-temperature,
 .maximum-temperature {
-  display: inline;
   font-size: 13px;
-  justify-content: space-between;
 }
 .maximum-temperature {
   margin-right: 5px;
