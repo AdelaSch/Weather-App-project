@@ -39,15 +39,13 @@ function displayForecast(response) {
     if (index < 4) {
       forecastHTML =
         forecastHTML +
-        `
-    <div class="col mx-1 weather-forecast-day">${formatDay(forecastDay.dt)}
-    
+        `<div class="col mx-1 weather-forecast-day">${formatDay(forecastDay.dt)}
       <img
         src="icons/${forecastDay.weather[0].icon}.png"
         alt=""
         width="42"
       />
-    <div class="min-max-temp">
+    <div >
       <span class="maximum-temperature">${Math.round(
         forecastDay.temp.max
       )}°</span>
@@ -59,10 +57,28 @@ function displayForecast(response) {
   `;
     }
   });
-
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+//current location - to fix
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handleLocation);
+}
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+function handleLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "82aab33db8911af682203374eb6fbc22";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  axios
+    .get(`${apiUrl}&appid=${apiKey}`)
+    .then(displayTemperature, handleLocation);
+}
+
+//end
+
 function getForecast(coordinates) {
   let apiKey = "82aab33db8911af682203374eb6fbc22";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
