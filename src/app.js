@@ -60,7 +60,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-//current location - to fix
+
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(handleLocation);
@@ -76,8 +76,6 @@ function handleLocation(position) {
     .get(`${apiUrl}&appid=${apiKey}`)
     .then(displayTemperature, handleLocation);
 }
-
-//end
 
 function getForecast(coordinates) {
   let apiKey = "82aab33db8911af682203374eb6fbc22";

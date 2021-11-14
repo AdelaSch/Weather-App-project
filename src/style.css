@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 body {
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
   text-align: center;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
+
   background-color: #7d08dc;
   background-image: radial-gradient(
       at 47% 33%,
@@ -16,7 +17,7 @@ body {
 
 h1 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 28px;
 }
 p {
@@ -25,15 +26,18 @@ p {
 div .row .col {
   border-radius: 10px;
   padding-top: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+a:hover {
+  color: rgba(245, 245, 245, 0.623);
+}
 
-small {
-  margin-top: 5px;
+div.credit {
+  margin-top: 10px;
   font-size: 80%;
-  font-style: italic;
   font-weight: 300;
   color: whitesmoke;
 }
@@ -81,6 +85,7 @@ small {
 }
 div.row {
   margin-top: 20px;
+  padding: 2px;
 }
 .main-temp-box {
   background: rgb(80, 72, 205);
