@@ -2,11 +2,10 @@
 body {
   margin: 0 auto;
   width: 100vw;
-  height: 100vh;
   text-align: center;
   font-family: "Nunito", sans-serif;
-
   background-color: #7d08dc;
+  background-repeat: no-repeat;
   background-image: radial-gradient(
       at 47% 33%,
       hsl(296.15, 77%, 40%) 0,
@@ -31,6 +30,12 @@ div .row .col {
   flex-direction: column;
   justify-content: space-between;
 }
+.temperatureWeekly {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
 a:hover {
   color: rgba(245, 245, 245, 0.623);
 }
@@ -44,8 +49,8 @@ div.credit {
 .main-wrapper {
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
-  margin-top: 100px;
-
+  margin-top: 150px;
+  margin-bottom: 100px;
   padding-top: 50px;
   width: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -61,7 +66,7 @@ div.credit {
 .weather-forecast-day {
   background-color: white;
   transform-origin: center;
-  transform: perspective(800px) rotateY(28deg);
+  transform: perspective(800px) rotateY(17deg);
   transition: 0.5s;
   padding-bottom: 5px;
 }
