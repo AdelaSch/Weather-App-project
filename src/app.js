@@ -45,7 +45,7 @@ function displayForecast(response) {
         alt=""
         width="42"
       />
-    <div >
+    <div class="temperatureWeekly">
       <span class="maximum-temperature">${Math.round(
         forecastDay.temp.max
       )}°</span>
